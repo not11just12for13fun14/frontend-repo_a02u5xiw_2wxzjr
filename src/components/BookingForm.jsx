@@ -80,6 +80,7 @@ export default function BookingForm({ onClose }) {
           <div>
             <label className="text-sm text-gray-700">Language(s)</label>
             <input type="text" name="languages" value={form.languages} onChange={handleChange} placeholder="e.g., English, Spanish" className="mt-1 w-full rounded border px-3 py-2" />
+            <p className="mt-1 text-xs text-gray-500">English, German, Spanish — custom local content available on request.</p>
           </div>
           <div>
             <label className="text-sm text-gray-700">Format</label>
@@ -123,6 +124,8 @@ export default function BookingForm({ onClose }) {
             )}
           </div>
         )}
+
+        <p className="mt-3 text-[11px] text-gray-500">QED Express is operated by a UK-registered company and is fully GDPR-compliant. No personal data is required for guests to play.</p>
       </div>
     </div>
   )

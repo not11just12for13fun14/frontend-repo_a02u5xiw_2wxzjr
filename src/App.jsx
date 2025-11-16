@@ -2,9 +2,13 @@ import { useState } from 'react'
 import { CalendarPlus } from 'lucide-react'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
+import SocialProof from './components/SocialProof'
 import PromotionMaterials from './components/PromotionMaterials'
+import QuickDemo from './components/QuickDemo'
+import BuiltForCAs from './components/BuiltForCAs'
 import Checklist from './components/Checklist'
 import QuickGuide from './components/QuickGuide'
+import LiveDemo from './components/LiveDemo'
 import BookingForm from './components/BookingForm'
 import TrophyOrder from './components/TrophyOrder'
 
@@ -27,7 +31,10 @@ function App() {
 
       <Hero onScheduleClick={() => setShowBooking(true)} onAssetsClick={() => window.open('https://drive.google.com', '_blank')} />
       <HowItWorks />
+      <SocialProof />
       <PromotionMaterials />
+      <QuickDemo />
+      <BuiltForCAs />
       <Checklist />
 
       {/* Optional trophy module CTA */}
@@ -42,8 +49,14 @@ function App() {
       </section>
 
       <QuickGuide />
+      <LiveDemo onRequest={() => setShowBooking(true)} />
 
-      <footer className="border-t py-10 text-center text-sm text-gray-600">QED Express</footer>
+      <footer className="border-t py-10 text-center text-sm text-gray-600">
+        <div className="mx-auto max-w-6xl px-6 space-y-2">
+          <p>QED Express</p>
+          <p className="text-xs text-gray-500">QED Express is operated by a UK-registered company and is fully GDPR-compliant. No personal data is required for guests to play.</p>
+        </div>
+      </footer>
 
       {showBooking && <BookingForm onClose={() => setShowBooking(false)} />}
       {showTrophy && <TrophyOrder onClose={() => setShowTrophy(false)} />}
