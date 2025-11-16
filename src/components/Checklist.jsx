@@ -15,14 +15,15 @@ export default function Checklist() {
   }
 
   return (
-    <section className="bg-white py-16 md:py-20">
+    <section className="relative bg-white py-16 md:py-20">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-fuchsia-50/60 to-transparent" />
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-gray-900">What You Need</h2>
-        <div className="mt-6 divide-y rounded-xl border">
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">What You Need</h2>
+        <div className="mt-6 divide-y rounded-2xl border overflow-hidden">
           {Object.entries(items).map(([group, lines]) => (
             <details key={group} className="group">
-              <summary className="flex cursor-pointer list-none items-center justify-between p-5">
-                <span className="font-medium text-gray-900">{group}</span>
+              <summary className="flex cursor-pointer list-none items-center justify-between p-5 bg-white">
+                <span className="font-semibold text-gray-900">{group}</span>
                 <span className="text-gray-500 group-open:rotate-180 transition">▾</span>
               </summary>
               <div className="space-y-2 p-5 text-gray-700">
